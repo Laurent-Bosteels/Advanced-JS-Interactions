@@ -1,0 +1,116 @@
+body {
+  padding-bottom: 50px;
+}
+
+.container {
+    padding: 0px;
+}
+
+.col-12, .row {
+    padding: 0px;
+    margin: 0px;
+}
+
+.picture {
+  padding: 10px;
+}
+
+.image {
+  height: 250px;
+  background: midnightblue;
+}
+
+.poke {
+  font-weight: bold;
+}
+
+.chaser {
+  width: 50px;
+  height: 50px;
+  background: red;
+  border-radius: 50%;
+}
+
+.runner {
+  width: 50px;
+  height: 50px;
+  background: green;
+  border-radius: 50%;
+}
+
+.box {
+  border: 1px solid grey;
+  height: 350px;
+}
+
+.carouselContainer {
+  height: 400px;
+}
+
+.title {
+  font-size: 1.5em;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.lightMode {
+  background: rgb(245, 245, 245);
+  color: rgb(10, 10, 10);
+}
+
+.bigTitle {
+  font-size: 2.5em;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  line-height: 47px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid grey;
+  border-radius: 50%;
+}
+
+.mode:hover {
+  cursor: pointer;
+}
+
+$headerY: 400px;
+
+@mixin transform($transformation) {
+  -ms-transform: #{$transformation};
+  transform: #{$transformation};
+}
+
+#myHeader {
+  position: sticky;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $headerY;
+  background: url() no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.main {
+  z-index: 100;
+  padding: 40px;
+  background: rgb(245, 245, 245);
+}
+
+// DARKMODE STYLING
+
+.darkMode {
+  background: rgb(10, 10, 10);
+  color: rgb(245, 245, 245);
+}

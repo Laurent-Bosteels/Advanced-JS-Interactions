@@ -18,12 +18,12 @@ let i = 0;
 let images = [];
 let time = 3000;
 
-images[0] = "https://placekitten.com/1000/400";
-images[1] = "https://placekitten.com/1100/400";
-images[2] = "https://placekitten.com/1200/400";
+images[0] = "https://placekitten.com/1440/800";
+images[1] = "https://placekitten.com/1500/800";
+images[2] = "https://placekitten.com/1600/800";
 
 function carousel() {
-  document.slide.src = images[i];
+  document.getElementById("myHeader").style.backgroundImage = "url(" + images[i] + ")";
   if (i < images.length - 1) {
     i++;
   } else {
