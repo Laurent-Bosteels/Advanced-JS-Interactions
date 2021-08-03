@@ -35,7 +35,6 @@ body{
 }
 
 .carouselContainer{
-    background: royalblue;
     height: 400px;
 }
 
@@ -77,3 +76,4 @@ body{
 .mode:hover{
     cursor: pointer;
 }
+
