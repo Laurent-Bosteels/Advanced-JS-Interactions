@@ -48,27 +48,24 @@ lightboxImages.forEach((lightboxImage) => {
     lightbox.classList.add("active");
 
     const img = document.createElement("img");
-    let caption = document.createElement("caption");
-
-    // image src
     img.src = lightboxImage.src;
 
-    // alt attribute
+    // Captions
+    let caption = document.createElement("div");
+    caption.classList.add("caption");
     img.alt = lightboxImage.alt;
-
-    console.log(img.alt);
-
-    if (img.alt) {
-      lightbox.insertAdjacentHTML(
-        "afterEnd",
-        `<div class="caption">${img.alt}</div>`
-      );
-    }
+    caption.innerText = img.alt;
 
     while (lightbox.firstChild) {
       lightbox.removeChild(lightbox.firstChild);
     }
+
     lightbox.appendChild(img);
+
+    if (img.alt) {
+      lightbox.appendChild(caption);
+    }
+    
   });
 });
 
