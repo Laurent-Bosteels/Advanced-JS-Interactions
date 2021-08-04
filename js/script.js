@@ -64,3 +64,16 @@ lightbox.addEventListener("click", (e) => {
   if (e.target !== e.currentTarget) return;
   lightbox.classList.remove("active");
 });
+
+ // CHASER
+
+let chaser = document.querySelector('.chaser');
+let box = document.querySelector('.box');
+
+const onMouseMove = (e) =>{
+  chaser.style.left = e.pageX + 'px';
+  chaser.style.top = e.pageY + 'px';
+}
+
+console.log(box);
+box.addEventListener('mousemove', onMouseMove); 
