@@ -9,7 +9,7 @@ function randomLetter() {
 
 // DARK MODE SWITCH
 function darkMode() {
-  var darkModeSwitch = document.body;
+  var darkModeSwitch = document.querySelector(".toggle");
   darkModeSwitch.classList.toggle("darkMode");
 }
 
@@ -38,6 +38,7 @@ window.onload = carousel;
 // COLLAGE-LIGHTBOX
 
 const lightbox = document.createElement("div");
+
 lightbox.id = "lightbox";
 document.body.appendChild(lightbox);
 
@@ -45,13 +46,24 @@ const lightboxImages = document.querySelectorAll(".collage-image");
 lightboxImages.forEach((lightboxImage) => {
   lightboxImage.addEventListener("click", (e) => {
     lightbox.classList.add("active");
+
     const img = document.createElement("img");
+    let caption = document.createElement("caption");
+
+    // image src
     img.src = lightboxImage.src;
 
-    //   let alt = lightboxImage.getAttribute('alt');
-    // if( alt ) {
-    //   image.insertAdjacentHTML('afterEnd', `<p class="caption">${alt}</p>`);
-    // }
+    // alt attribute
+    img.alt = lightboxImage.alt;
+
+    console.log(img.alt);
+
+    if (img.alt) {
+      lightbox.insertAdjacentHTML(
+        "afterEnd",
+        `<div class="caption">${img.alt}</div>`
+      );
+    }
 
     while (lightbox.firstChild) {
       lightbox.removeChild(lightbox.firstChild);
@@ -65,15 +77,14 @@ lightbox.addEventListener("click", (e) => {
   lightbox.classList.remove("active");
 });
 
- // CHASER
+// CHASER
 
-let chaser = document.querySelector('.chaser');
-let box = document.querySelector('.box');
+let chaser = document.querySelector(".chaser");
+let box = document.querySelector(".box");
 
-const onMouseMove = (e) =>{
-  chaser.style.left = e.pageX + 'px';
-  chaser.style.top = e.pageY + 'px';
-}
+const onMouseMove = (e) => {
+  chaser.style.left = e.pageX + "px";
+  chaser.style.top = e.pageY + "px";
+};
 
-console.log(box);
-box.addEventListener('mousemove', onMouseMove); 
+box.addEventListener("mousemove", onMouseMove);
