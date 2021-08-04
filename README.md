@@ -15,7 +15,7 @@ Go check out the HTML file! Everything you need to know is there!
 - [x] A parallax carousel
 - [x] A collage with popup for more details (alt caption needs to be added)
 - [x] Hover image above every Pokemon in the text
-- [ ] Functional chaser or runner circle
+- [x] Functional chaser or runner circle
 
 ## Nice-to-have features
 - [ ] Chaser AND runner circle are functional
