@@ -22,3 +22,10 @@ Go check out the HTML file! Everything you need to know is there!
 - [x]  Lightmode / Darkmode switch
 - [ ] Final letter challenge completed!
 
+## Working on
+- [x] Firefox
+- [x] Chrome
+- [x] Safari
+- [ ] Edge (Not Tested)
+
+
