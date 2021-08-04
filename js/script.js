@@ -18,12 +18,13 @@ let i = 0;
 let images = [];
 let time = 3000;
 
-images[0] = "https://placekitten.com/1440/800";
-images[1] = "https://placekitten.com/1500/800";
-images[2] = "https://placekitten.com/1600/800";
+images[0] = "https://placekitten.com/1440/900";
+images[1] = "https://placekitten.com/1500/950";
+images[2] = "https://placekitten.com/1600/950";
 
 function carousel() {
-  document.getElementById("myHeader").style.backgroundImage = "url(" + images[i] + ")";
+  document.getElementById("myHeader").style.backgroundImage =
+    "url(" + images[i] + ")";
   if (i < images.length - 1) {
     i++;
   } else {
@@ -33,3 +34,33 @@ function carousel() {
 }
 
 window.onload = carousel;
+
+// COLLAGE-LIGHTBOX
+
+const lightbox = document.createElement("div");
+lightbox.id = "lightbox";
+document.body.appendChild(lightbox);
+
+const lightboxImages = document.querySelectorAll(".collage-image");
+lightboxImages.forEach((lightboxImage) => {
+  lightboxImage.addEventListener("click", (e) => {
+    lightbox.classList.add("active");
+    const img = document.createElement("img");
+    img.src = lightboxImage.src;
+
+    //   let alt = lightboxImage.getAttribute('alt');
+    // if( alt ) {
+    //   image.insertAdjacentHTML('afterEnd', `<p class="caption">${alt}</p>`);
+    // }
+
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild);
+    }
+    lightbox.appendChild(img);
+  });
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target !== e.currentTarget) return;
+  lightbox.classList.remove("active");
+});
